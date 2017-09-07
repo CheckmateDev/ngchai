@@ -1,0 +1,4 @@
+<ng-content></ng-content>
+<ol class="poppa-dap">
+  <li *ngFor="let slide of slides.toArray(); let i = index" class="dip-dap" [class.active]="i === active" (click)="goTo(i)"></li>
+</ol>

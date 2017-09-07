@@ -1,0 +1,25 @@
+.poppa-dap {
+  padding: 0;
+  margin: 50px 0 0;
+  text-align: center;
+  .dip-dap {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 0 7px;
+    background: #A7A7A7;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: rgba(0, 0, 0, 0.5);
+    &.active {
+      -webkit-filter: brightness(25%);
+      filter: brightness(25%);
+      pointer-events: none;
+    }
+    &:hover {
+      -webkit-filter: brightness(125%);
+      filter: brightness(125%);
+    }
+  }
+}

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+
+import { SliderComponent } from './chai/slider';
 
 @Component({
   selector: 'chai-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'chai';
+  @ViewChild(SliderComponent) slider: SliderComponent;
+  public title: string = 'ngchai';
+
+  public slideBack(): void {
+    this.slider.back()
+  }
+
+  public slideNext(): void {
+    this.slider.next()
+  }
 }

@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+@import './scss/ngchai';
+
+/*------------Mixins-----------*/
+
+@mixin ui {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin brightness($value) {
+  -webkit-filter: brightness($value);
+  filter: brightness($value);
+}
+
+@mixin absolute($right: null, $left: null) {
+  position: absolute;
+  margin: auto;
+  right: $right;
+  left: $left;
+}
+
+chai-slider {
+  @include ui;
+  img.arrow {
+    cursor: pointer;
+    transition: all 0.3s;
+    &.left {
+      @include absolute(null, 0);
+    }
+    &.right {
+      @include absolute(0, null);
+    }
+    &:hover {
+      @include brightness(75%);
+    }
+  }
+}
