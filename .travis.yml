@@ -22,6 +22,7 @@ deploy:
     email: $EMAIL_ADDRESS
     api_key: $NPM_API
     skip_cleanup: true
+    tag: nightly
     on:
       branch: dev
       condition: "\"$TRAVIS_EVENT_TYPE\" == \"cron\""
