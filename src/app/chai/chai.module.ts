@@ -2,15 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SliderModule } from './slider';
+import { SidenavModule } from './sidenav';
 
 @NgModule({
   imports: [
     CommonModule,
-    SliderModule
+    SliderModule,
+    SidenavModule
   ],
   declarations: [],
   exports: [
-    SliderModule
+    SliderModule,
+    SidenavModule
   ]
 })
 export class ChaiModule { }

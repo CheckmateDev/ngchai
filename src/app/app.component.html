@@ -1,30 +1,32 @@
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-</div>
+ <chai-sidenav-container> 
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{title}}!
+    </h1>
+  </div>
 
-<chai-slider [duration]="5000">
-  <chai-slide>
-    <div style="text-align:center">
-      <p>Slide #1</p>
-    </div>
-  </chai-slide>
-  <chai-slide>
-    <div style="text-align:center">
-      <p>Slide #2</p>
-    </div>
-  </chai-slide>
-  <chai-slide>
-    <div style="text-align:center">
-      <p>Slide #3</p>
-    </div>
-  </chai-slide>
-  <chai-slide>
-    <div style="text-align:center">
-      <p>Slide #4</p>
-    </div>
-  </chai-slide>
-  <img src="/assets/arrow-left.png" class="arrow left" alt="Left" (click)="slideBack()">
-  <img src="/assets/arrow-right.png" class="arrow right" alt="Right" (click)="slideNext()">
-</chai-slider>
+  <chai-slider [duration]="5000">
+    <chai-slide>
+      <div style="text-align:center">
+        <p>Slide #1</p>
+      </div>
+    </chai-slide>
+    <chai-slide>
+      <div style="text-align:center">
+        <p>Slide #2</p>
+      </div>
+    </chai-slide>
+    <chai-slide>
+      <div style="text-align:center">
+        <p>Slide #3</p>
+      </div>
+    </chai-slide>
+    <chai-slide>
+      <div style="text-align:center">
+        <p>Slide #4</p>
+      </div>
+    </chai-slide>
+    <img src="/assets/arrow-left.png" class="arrow left" alt="Left" (click)="slideBack()">
+    <img src="/assets/arrow-right.png" class="arrow right" alt="Right" (click)="slideNext()">
+  </chai-slider>
+</chai-sidenav-container>
