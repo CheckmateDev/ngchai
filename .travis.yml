@@ -8,7 +8,9 @@ script:
   - npm run package
 before_deploy:
   - if [ ${TRAVIS_EVENT_TYPE} == "cron" ]; then
-      node cron-nightly.js;
+      node build/nightly.js;
+    elif [ ${TRAVIS_BRANCH} == "dev" ]; then
+      node build/dev.js;
     fi
   - cd ./dist
 deploy:
@@ -18,6 +20,7 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+      tags: true
   - provider: npm
     email: $EMAIL_ADDRESS
     api_key: $NPM_API
@@ -26,3 +29,11 @@ deploy:
     on:
       branch: dev
       condition: "\"$TRAVIS_EVENT_TYPE\" == \"cron\""
+  - provider: npm
+    email: $EMAIL_ADDRESS
+    api_key: $NPM_API
+    skip_cleanup: true
+    tag: dev
+    on:
+      branch: dev
+      condition: "\"$TRAVIS_EVENT_TYPE\" != \"cron\""
